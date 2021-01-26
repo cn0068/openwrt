@@ -11,15 +11,15 @@ on:
     inputs:
       ssh:
         description: 'SSH远程'
-        required: true
+        required: false
         default: 'ssh-actions'
       wxtz:
         description: '微信通知'
-        required: true
+        required: false
         default: 'wxtz-actions'
       release:
         description: '发布固件'
-        required: true
+        required: false
         default: 'release-actions'
 
 #定时触发开始编译(把下面两个#去掉开启,时间设置请看定时编译说明)
@@ -30,8 +30,7 @@ env:
   REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
   SCKEY: ${{ secrets.SCKEY }}
   TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-  TZ: Asia/Shanghai
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} TZ: Asia/Shanghai
   GITHUB_RELEASE: https://github.com/cn0068/build-openwrt/releases
 
 jobs: 
